@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <head>
+  <meta charset="UTF-8">
+  <script src="auth-guard.js"></script> <!-- LE GARDIEN EN PREMIER -->
+  <title>Mon Profil</title>
+  <link rel="stylesheet" href="style.css">
+  <head>
+    <script src="auth-guard.js"></script>
+    <script src="config.js"></script> <!-- ICI -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+</head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notifications - New Déchets</title>
+  <!-- 1. Le style général pour le header/footer -->
+  <link rel="stylesheet" href="style.css"> 
+  <!-- 2. Le style spécifique pour les alertes et animations -->
+  <link rel="stylesheet" href="notifications.css"> 
+</head>
+
+<body>
+  <header>
+    <h1>Mes Notifications</h1>
+  </header>
+
+  <main>
+    <div id="notifications-list" class="notifications-container"></div>
+      <!-- Les notifications seront injectées ici par le JS -->
+      <p class="empty-msg">Chargement de vos notifications...</p>
+    </div>
+  </main>
+
+  <footer>
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="notifications.html" class="active">Notifications</a></li>
+        <li><a href="signalement.html">Signalement</a></li>
+        <li><a href="profil.html">Profil</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <script src="notifications.js"></script>
+</body>
+</html>

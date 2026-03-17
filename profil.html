@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="auth-guard.js"></script> <!-- LE GARDIEN EN PREMIER -->
+  <title>Profil - New Déchets</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="profil.css">
+  <head>
+    <script src="auth-guard.js"></script>
+    <script src="config.js"></script> <!-- ICI -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+</head>
+<body>
+  <header>
+    <h1>Profil Utilisateur</h1>
+  </header>
+
+  <main>
+    <section class="user-info">
+      <h2>Informations personnelles</h2>
+      <form id="profil-form">
+        <label for="display-name">Nom complet :</label>
+        <input type="text" id="display-name" placeholder="Votre nom" required />
+
+        <label for="user-quartier">Quartier :</label>
+        <select id="user-quartier">
+          <option value="medina">Médina</option>
+          <option value="plateau">Plateau</option>
+          <option value="ouakam">Ouakam</option>
+          <option value="ngor">Ngor</option>
+        </select>
+        
+        <button type="submit" class="save-btn" style="margin-top: 15px;">Mettre à jour le profil</button>
+      </form>
+    </section>
+
+    <section class="preferences" style="margin-top: 20px;">
+      <h2>Paramètres de notification</h2>
+      <form id="preferences-form">
+        <label><input type="checkbox" id="email" checked /> E-mail</label>
+        <label><input type="checkbox" id="sms" /> SMS</label>
+        <label><input type="checkbox" id="push" checked /> Push</label>
+        <button type="submit" class="save-btn">Sauvegarder les alertes</button>
+      </form>
+    </section>
+
+    <div id="confirmation" class="hidden">
+      ✅ Modifications enregistrées !
+    </div>
+  </main>
+  <!-- Bouton de déconnexion -->
+<div style="margin-top: 30px; padding: 0 20px;">
+  <button id="logout-btn" class="logout-btn">Se déconnecter</button>
+</div>
+
+
+  <footer>
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
+        <li><a href="signalement.html">Signalement</a></li>
+        <li><a href="profil.html" class="active">Profil</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <script src="profil.js"></script>
+</body>
+</html>

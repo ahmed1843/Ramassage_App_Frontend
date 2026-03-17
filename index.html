@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Déchets - Accueil</title>
+  
+  <!-- Config en premier -->
+  <script src="config.js"></script>
+  
+  <!-- Style général -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>New Déchets</h1>
+  </header>
+
+  <main>
+    <section class="next-pickup">
+      <h2>Prochain passage :</h2>
+      <p id="pickup-time">Chargement...</p>
+      <button class="calendar-btn" onclick="window.location.href='calendrier.html'">
+        Voir le calendrier
+      </button>
+    </section>
+  
+    <section class="auth-options">
+      <!-- Ce bouton sera remplacé par "Bonjour Mohamed" via script.js si connecté -->
+      <button onclick="window.location.href='login.html'" class="auth-btn">Se connecter</button>
+    </section>
+  </main>
+
+  <footer>
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
+        <li><a href="signalement.html">Signalement</a></li>
+        <li><a href="profil.html">Profil</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

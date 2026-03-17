@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion</title>
+  <link rel="stylesheet" href="auth.css">
+  <head>
+    <script src="config.js"></script> <!-- Indispensable pour envoyer les infos au serveur -->
+    <link rel="stylesheet" href="style.css">
+    <!-- PAS de auth-guard ici, sinon tu ne pourras jamais accéder au bouton "Se connecter" ! -->
+
+</head>
+<body>
+  <header>
+    <h1>Connexion</h1>
+  </header>
+
+  <main>
+    <form id="login-form" class="auth-form">
+      <label for="telephone">Numéro de téléphone :</label>
+      <input type="tel" id="telephone" required pattern="[0-9]{9,}" placeholder="Ex: 771234567">
+
+      <button type="submit" class="auth-btn">Se connecter</button>
+    </form>
+
+    <div id="login-confirmation" class="hidden">
+      ✅ Connexion réussie ! Bienvenue.
+    </div>
+  </main>
+
+  <footer>
+    <p>Pas encore inscrit ? <a href="register.html">Créer un compte</a></p>
+    <p><a href="index.html">← Retour à l'accueil</a></p>
+
+  </footer>
+
+  <script src="login.js"></script>
+</body>
+</html>
