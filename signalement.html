@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SCRIPTS : Le gardien d'abord, puis la config -->
+  <script src="auth-guard.js"></script>
+  <script src="config.js"></script>
+  
+  <title>Signalement - New Déchets</title>
+  
+  <!-- STYLES : Le général puis le spécifique -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="signalement.css">
+</head>
+<body>
+  <!-- Le reste du corps (body) est parfait, ne change rien ! -->
+  <header>
+    <h1>Signalement</h1>
+  </header>
+
+  <main>
+    <form class="report-form" id="report-form">
+      <label for="description">Description du problème :</label>
+      <textarea id="description" required></textarea>
+
+      <!-- BLOC LOCALISATION UNIQUE -->
+      <label for="location">Localisation :</label>
+      <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+        <input type="text" id="location" placeholder="Ex: Quartier Médina" required style="flex: 1;" />
+        <button type="button" id="geo-btn" title="Ma position actuelle" style="padding: 10px; cursor: pointer;">📍</button>
+      </div>
+
+      <label for="photo">Ajouter une photo :</label>
+      <input type="file" id="photo" accept="image/*" />
+      
+      <!-- ZONE DE PREVIEW PHOTO -->
+      <div id="preview-container" style="margin-top: 10px; display: none;">
+        <img id="photo-preview" src="" alt="Aperçu" style="max-width: 100%; border-radius: 8px; border: 1px solid #ddd;" />
+      </div>
+
+      <button type="submit" class="send-btn" style="margin-top: 20px;">Envoyer</button>
+    </form>
+
+    <div id="confirmation" class="hidden">
+      ✅ Votre signalement a été envoyé avec succès !
+    </div>
+  </main>
+
+  <footer>
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
+        <li><a href="signalement.html" class="active">Signalement</a></li>
+        <li><a href="profil.html">Profil</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <script src="signalement.js"></script>
+</body>
+</html>

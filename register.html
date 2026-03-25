@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S'enregistrer - New Déchets</title>
+  
+  <!-- Scripts de config en premier -->
+  <script src="config.js"></script>
+  
+  <!-- Styles (On met le général puis le spécifique auth) -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+  <header>
+    <h1>Créer un compte</h1>
+  </header>
+
+  <main>
+    <form id="register-form" class="auth-form">
+      <label for="prenom">Prénom :</label>
+      <input type="text" id="prenom" required>
+
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" required>
+
+      <label for="telephone">Numéro de téléphone :</label>
+      <input type="tel" id="telephone" required pattern="[0-9]{9,}" placeholder="Ex: 771234567">
+      <label for="email">Email :</label>
+      <input type="email" id="email" required placeholder="ex: momo@mail.com">
+
+      <label for="password">Mot de passe :</label>
+      <input type="password" id="password" required minlength="6">
+
+
+      <!-- Zone d'affichage des erreurs (cachée par défaut) -->
+      <div id="error-message" class="error-box hidden">
+        ❌ Une erreur est survenue. Veuillez réessayer.
+      </div>
+
+      <!-- UN SEUL BOUTON ICI (j'ai supprimé le doublon) -->
+      <button type="submit" class="auth-btn">S'enregistrer</button>
+    </form>
+
+    <div id="register-confirmation" class="hidden">
+      ✅ Enregistrement réussi ! Vous pouvez maintenant vous connecter.
+    </div>
+  </main>
+
+  <footer>
+    <p>Déjà inscrit ? <a href="login.html">Se connecter</a></p>
+    <p><a href="index.html">← Retour à l'accueil</a></p>
+  </footer>
+
+  <script src="register.js"></script>
+</body>
+</html>

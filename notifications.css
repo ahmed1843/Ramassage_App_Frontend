@@ -1,0 +1,86 @@
+/* --- Ajustement du Header (Plus écolo) --- */
+header {
+  background: #27ae60; /* Vert au lieu du bleu sombre */
+  color: white;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* --- Ajustement du Menu du bas (Fixé) --- */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  border-top: 1px solid #ddd;
+  padding: 0; /* On enlève le padding pour que les liens prennent toute la place */
+  z-index: 1000;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar a {
+  padding: 15px 10px;
+  display: block;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* --- Correction du Responsive --- */
+@media (max-width: 600px) {
+  .nav-bar {
+    flex-direction: row; /* On force l'horizontal sur mobile */
+  }
+  
+  main {
+    padding-bottom: 80px; /* On ajoute de l'espace pour ne pas cacher la dernière notif derrière le menu */
+  }
+}
+/* --- Styles de couleurs pour les alertes --- */
+
+/* On force la bordure selon le type (sera ajouté via JS) */
+.notification.info {
+  border-left: 5px solid #3498db !important; /* Bleu */
+}
+
+.notification.success {
+  border-left: 5px solid #27ae60 !important; /* Vert */
+}
+
+.notification.warning {
+  border-left: 5px solid #f1c40f !important; /* Jaune */
+}
+
+/* Style pour l'heure en bas à droite de la notif */
+.notif-time {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: #bdc3c7;
+  text-align: right;
+}
+
+/* Message si la liste est vide */
+.empty-msg {
+  text-align: center;
+  color: #95a5a6;
+  margin-top: 50px;
+  font-style: italic;
+}
+main {
+    /* Ajoute une grosse marge en bas pour que le dernier texte 
+       ne soit jamais caché par le menu de navigation */
+    padding-bottom: 120px !important; 
+}
+
+#notifications-list {
+    /* Pour être sûr que la liste prend toute la place nécessaire */
+    min-height: 200px;
+}
+

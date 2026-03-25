@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil - New Déchets</title>
+  <script src="auth-guard.js"></script>
+  <script src="config.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="profil.css">
+</head>
+
+<body>
+  <header>
+    <h1>Profil Utilisateur</h1>
+  </header>
+
+  <main class="p-5">
+    <!-- RÉSUMÉ RAPIDE -->
+    <section class="bg-white p-6 rounded-card shadow-md text-center mb-6">
+      <h2 class="text-xl font-bold mb-4">Mon Profil</h2>
+      <p><strong>Nom :</strong> <span id="user-name-display" class="text-primary">Chargement...</span></p>
+      <p><strong>Email :</strong> <span id="user-email-display">Chargement...</span></p>
+    </section>
+
+    <!-- FORMULAIRE DE MISE À JOUR -->
+    <section class="user-info">
+      <h2>Informations personnelles</h2>
+      <form id="profil-form">
+        <label for="display-name">Nom complet :</label>
+        <input type="text" id="display-name" placeholder="Votre nom" required />
+
+        <label for="user-quartier">Quartier :</label>
+        <select id="user-quartier">
+          <option value="medina">Médina</option>
+          <option value="plateau">Plateau</option>
+          <option value="ouakam">Ouakam</option>
+          <option value="ngor">Ngor</option>
+        </select>
+        <button type="submit" class="save-btn" style="margin-top: 15px;">Mettre à jour le profil</button>
+      </form>
+    </section>
+
+    <!-- ZONE DES SIGNALEMENTS (SANS LA CARTE) -->
+    <section class="my-reports-section" style="margin-top: 30px;">
+      <h2 style="color: #27ae60; margin-bottom: 15px;">Mes derniers signalements</h2>
+
+      <!-- BOUTONS DE FILTRE -->
+      <div class="filter-buttons" style="margin-bottom: 20px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+          <button class="filter-btn active" data-status="all" style="padding: 8px 15px; border-radius: 20px; border: 1px solid #333; cursor: pointer; background: #333; color: white;">Tous</button>
+          <button class="filter-btn" data-status="pending" style="padding: 8px 15px; border-radius: 20px; border: 1px solid #f1c40f; cursor: pointer; background: #fff; color: #f1c40f;">En attente</button>
+          <button class="filter-btn" data-status="in_progress" style="padding: 8px 15px; border-radius: 20px; border: 1px solid #3498db; cursor: pointer; background: #fff; color: #3498db;">En cours</button>
+          <button class="filter-btn" data-status="resolved" style="padding: 8px 15px; border-radius: 20px; border: 1px solid #27ae60; cursor: pointer; background: #fff; color: #27ae60;">Terminés</button>
+      </div>
+
+      <!-- LA LISTE OU VONT S'AFFICHER LES CARTES COLOREES -->
+      <div id="my-reports-list" class="flex flex-col gap-3">
+        <p class="text-center">Chargement de vos activités...</p>
+      </div>
+    </section>
+
+    <div id="confirmation" class="hidden">✅ Modifications enregistrées !</div>
+
+    <div style="margin-top: 30px;">
+      <button id="logout-btn" class="logout-btn">Se déconnecter</button>
+    </div>
+  </main>
+
+  <footer>
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
+        <li><a href="signalement.html">Signalement</a></li>
+        <li><a href="profil.html" class="active">Profil</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <script src="profil.js"></script>
+</body>
+</html>

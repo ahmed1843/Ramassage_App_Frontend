@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Déchets - Accueil</title>
+  
+  <!-- Config en premier -->
+  <script src="config.js"></script>
+  
+  <!-- Style général -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <body>
+  <header>
+    <h1>New Déchets</h1>
+  </header>
+
+  <main class="p-5 flex flex-col gap-6">
+<input type="text" id="search-zone" placeholder="Rechercher une zone (ex: Médina)..." 
+       class="w-full p-3 mb-4 border rounded-xl shadow-sm">
+
+    
+    <!-- CONTENEUR DES ZONES -->
+    <section id="zones-container" class="flex flex-col gap-4">
+      <p class="text-center">Chargement des zones...</p>
+    </section>
+
+    <!-- PROCHAIN PASSAGE -->
+    <section class="next-pickup bg-white p-5 rounded-card shadow-sm text-center">
+      <h2 class="text-primary font-bold">Prochain passage :</h2>
+      <p id="pickup-time" class="text-lg font-bold my-3">Chargement...</p>
+      <button class="calendar-btn w-full py-3 bg-secondary text-white rounded-lg" onclick="window.location.href='calendrier.html'">
+        Voir le calendrier
+      </button>
+    </section>
+<section class="stats-section">
+  <h2>État des Zones (Bruit & Signalements)</h2>
+  <!-- C'est ici que le JS va injecter les données -->
+  <div id="stats-container">Chargement des statistiques...</div>
+</section>
+
+
+    <!-- SECTION AUTHENTIFICATION (Gérée par script.js) -->
+    <section id="auth-section" class="auth-options bg-white p-6 rounded-card shadow-md">
+      <!-- Ce bloc est visible par défaut pour les nouveaux -->
+      <div id="guest-block" class="text-center">
+        <button onclick="window.location.href='login.html'" class="auth-btn w-full bg-primary text-white py-4 rounded-xl font-bold">
+          Se connecter
+        </button>
+        <p class="mt-4 text-sm">
+          Nouveau ? <a href="register.html" class="text-primary font-bold underline">Créer un compte</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
+        <li><a href="signalement.html">Signalement</a></li>
+        <li><a href="profil.html">Profil</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

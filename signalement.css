@@ -1,0 +1,146 @@
+/* On importe les bases si besoin, mais on reste sur le même thème */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f7f6;
+  margin: 0;
+  padding: 0;
+  color: #2c3e50;
+}
+
+header {
+  background-color: #27ae60;
+  color: white;
+  padding: 1.2rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+main {
+  padding: 20px;
+  max-width: 500px; /* Pour que ça reste centré sur ordinateur */
+  margin: 0 auto;
+}
+
+/* --- Le Formulaire --- */
+.report-form {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  margin-top: 15px;
+  color: #27ae60;
+}
+
+input[type="text"],
+textarea,
+input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Pour que le padding ne dépasse pas */
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+/* --- Bouton GPS et Alignement --- */
+#geo-btn {
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  width: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#geo-btn:hover {
+  background-color: #34495e;
+}
+
+/* --- Prévisualisation Photo --- */
+#preview-container {
+  margin-top: 15px;
+  text-align: center;
+  border: 2px dashed #27ae60;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#photo-preview {
+  max-width: 100%;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* --- Bouton Envoyer --- */
+.send-btn {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 15px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+/* --- Message de Succès --- */
+#confirmation {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+/* --- Navigation du bas --- */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  border-top: 1px solid #eee;
+}
+
+.nav-bar {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: #95a5a6;
+  padding: 15px 10px;
+  display: block;
+  font-size: 0.8rem;
+}
+
+.nav-bar a.active {
+  color: #27ae60;
+  font-weight: bold;
+  border-top: 3px solid #27ae60;
+}

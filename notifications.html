@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notifications - New Déchets</title>
+  <script src="auth-guard.js"></script>
+  <script src="config.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="notifications.css">
+</head>
+
+<body>
+  <header>
+    <h1>Mes Notifications</h1>
+  </header>
+
+<main class="p-5" style="padding-bottom: 120px;"> <!-- Marge en bas pour le menu -->
+    <!-- BLOC RÉGLAGES COMPLET -->
+    <section style="background: white; padding: 15px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 20px;">
+      <h2 style="font-weight: bold; margin-bottom: 12px; font-size: 16px;">⚙️ Réglages & Suivi</h2>
+      
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">
+            <span style="font-size: 14px;">Activer les sons</span>
+            <input type="checkbox" id="notif-master" checked style="width: 18px; height: 18px;">
+        </div>
+
+        <!-- LES CASES QUI MANQUAIENT -->
+        <div style="font-size: 13px; color: #666;">
+            <p style="margin-bottom: 5px; font-weight: bold; color: #333;">Recevoir les alertes pour :</p>
+            <label style="display: block; margin-bottom: 5px;">
+                <input type="checkbox" class="notif-type" value="passage" checked> 🚛 Passage camion
+            </label>
+            <label style="display: block; margin-bottom: 5px;">
+                <input type="checkbox" class="notif-type" value="retard" checked> ⏳ Retard
+            </label>
+            <label style="display: block;">
+                <input type="checkbox" class="notif-type" value="rappel"> 🔔 Rappel
+            </label>
+        </div>
+
+        <select id="select-sound" style="width: 100%; padding: 8px; border-radius: 8px; border: 1px solid #ddd; font-size: 14px; background: #f9f9f9;">
+            <option value="system">Bip Système (Défaut)</option>
+            <option value="bell">Cloche Teranga</option>
+            <option value="truck">Klaxon UCG</option>
+        </select>
+      </div>
+    </section>
+
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-xl font-bold text-primary">Mes Alertes</h2>
+      <button id="mark-all-read" class="text-xs bg-gray-200 px-3 py-1 rounded-full">Tout marquer comme lu</button>
+    </div>
+    
+    <div id="notifications-list" class="flex flex-col gap-4">
+      <p class="text-center text-gray-400 italic mt-10">Recherche de vos alertes...</p>
+    </div>
+</main>
+
+
+  <footer>
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="notifications.html" class="active">Notifications</a></li>
+        <li><a href="signalement.html">Signalement</a></li>
+        <li><a href="profil.html">Profil</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <script src="notifications.js"></script>
+</body>
+</html>
