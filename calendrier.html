@@ -24,6 +24,58 @@
       </tbody>
     </table>
 </main>
+<footer style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000; background: white; border-top: 1px solid #eee;">
+  <nav>
+    <ul style="display: flex; justify-content: space-around; list-style: none; padding: 12px 0; margin: 0;">
+      <!-- ACCUEIL -->
+      <li class="nav-item">
+        <a href="index.html" style="text-decoration: none; color: #7f8c8d; display: flex; flex-direction: column; align-items: center; gap: 4px;">
+          <span style="font-size: 24px;">🏠</span>
+          <span style="font-size: 11px; font-weight: 600;">Accueil</span>
+        </a>
+      </li>
+      
+      <!-- NOTIFS (ACTIVE) -->
+      <li class="nav-item">
+        <a href="notifications.html" style="text-decoration: none; color: #27ae60; display: flex; flex-direction: column; align-items: center; gap: 4px;">
+          <span style="font-size: 24px;">🔔</span>
+          <span style="font-size: 11px; font-weight: 700;">Notifs</span>
+        </a>
+      </li>
+
+      <!-- SIGNALER -->
+      <li class="nav-item">
+        <a href="signalement.html" style="text-decoration: none; color: #7f8c8d; display: flex; flex-direction: column; align-items: center; gap: 4px;">
+          <span style="font-size: 24px;">📢</span>
+          <span style="font-size: 11px; font-weight: 600;">Signaler</span>
+        </a>
+      </li>
+
+      <!-- AIDE -->
+      <li class="nav-item">
+        <a href="contact.html" style="text-decoration: none; color: #7f8c8d; display: flex; flex-direction: column; align-items: center; gap: 4px;">
+          <span style="font-size: 24px;">❓</span>
+          <span style="font-size: 11px; font-weight: 600;">Aide</span>
+        </a>
+      </li>
+
+      <!-- PROFIL -->
+      <li class="nav-item">
+        <a href="profil.html" style="text-decoration: none; color: #7f8c8d; display: flex; flex-direction: column; align-items: center; gap: 4px;">
+          <span style="font-size: 24px;">👤</span>
+          <span style="font-size: 11px; font-weight: 600;">Profil</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</footer>
+
+<!-- Ajout d'une marge en bas du main pour ne pas que le footer cache le contenu -->
+<style>
+    main { padding-bottom: 80px !important; }
+    .nav-bar a:hover { color: #2ecc71 !important; }
+</style>
+
 
 <script src="calendrier.js"></script>
 

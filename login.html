@@ -14,34 +14,63 @@
   </header>
 
   <main class="p-5">
-    <!-- UN SEUL FORMULAIRE PROPRE -->
-    <form id="login-form" class="auth-form bg-white p-6 rounded-card shadow-md">
-      <div class="mb-4">
-        <label for="email" class="block font-bold mb-1">Email :</label>
-        <input type="email" id="email" placeholder="test@test.com" required class="w-full p-3 border rounded">
+    <!-- 1. FORMULAIRE DE CONNEXION (Style Carte) -->
+    <form id="login-form" class="auth-form" style="background: white; padding: 25px; border-radius: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+      <label for="email">Email :</label>
+      <input type="email" id="email" required placeholder="votre@mail.com" style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 10px; border: 1px solid #eee;">
+<label for="password">Mot de passe :</label>
+<div style="position: relative; width: 100%;">
+    <input type="password" id="password" required placeholder="••••••••" 
+           style="width: 100%; padding: 12px; padding-right: 45px; border-radius: 10px; border: 1px solid #eee; box-sizing: border-box;">
+    
+    <!-- L'icône OEIL -->
+    <span id="togglePassword" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 18px; user-select: none;">
+        👁️
+    </span>
+</div>
+
+<!-- Ton lien mot de passe oublié juste en dessous -->
+<div style="text-align: right; margin-top: 5px; margin-bottom: 20px;">
+    <a href="#" style="font-size: 12px; color: #95a5a6; text-decoration: none; font-style: italic;">Mot de passe oublié ?</a>
+</div>
+
+
+
+      <div id="error-message" class="error-box hidden" style="color: #e74c3c; font-size: 13px; margin-bottom: 15px; text-align: center;">
+        ❌ Email ou mot de passe incorrect.
       </div>
 
-      <div class="mb-6">
-        <label for="password" class="block font-bold mb-1">Mot de passe :</label>
-        <input type="password" id="password" placeholder="••••••••" required class="w-full p-3 border rounded">
-      </div>
-
-      <button type="submit" class="bg-primary text-white font-bold py-3 w-full rounded-xl">
+      <button type="submit" class="auth-btn" style="width: 100%; background: #2ecc71; color: white; border: none; padding: 14px; border-radius: 15px; font-weight: bold; cursor: pointer;">
         Se connecter
       </button>
-      
-      <p id="login-error" style="color: red; display: none; margin-top: 15px; text-align: center;"></p>
     </form>
 
-    <div id="login-confirmation" class="hidden text-center mt-4">
-      ✅ Connexion réussie ! Bienvenue.
+    <!-- 2. BLOC DE NAVIGATION (Identique à l'accueil / Inscription) -->
+    <div style="background:white; padding:20px; border-radius:20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-top:20px; text-align:center; font-family: sans-serif;">
+        <p style="font-size:14px; color:#7f8c8d; margin-bottom:15px;">Nouveau sur New Déchets ?</p>
+        
+        <button onclick="window.location.href='register.html'" style="width:100%; background:white; color:#2ecc71; border: 2px solid #2ecc71; padding:12px; border-radius:15px; font-weight:bold; cursor:pointer; font-size:16px;">
+            Créer un compte
+        </button>
+        
+        <p style="margin-top:15px; font-size:13px; color:#95a5a6;">
+            <a href="index.html" style="color:#95a5a6; text-decoration:none;">← Retour à l'accueil</a>
+        </p>
     </div>
   </main>
 
-  <footer class="text-center mt-10">
-    <p>Pas encore inscrit ? <a href="register.html" class="text-primary font-bold">Créer un compte</a></p>
-    <p class="mt-2"><a href="index.html">← Retour à l'accueil</a></p>
-  </footer>
+<footer class="mobile-nav">
+  <nav>
+    <ul class="nav-list">
+      <li class="nav-item"><a href="index.html">🏠<span>Accueil</span></a></li>
+      <li class="nav-item"><a href="notifications.html">🔔<span>Notifs</span></a></li>
+      <li class="nav-item"><a href="signalement.html" class="active">📢<span>Signaler</span></a></li> <!-- VERT ICI -->
+      <li class="nav-item"><a href="contact.html">❓<span>Aide</span></a></li>
+      <li class="nav-item"><a href="profil.html">👤<span>Profil</span></a></li>
+    </ul>
+  </nav>
+</footer>
+
 
   <script src="login.js"></script>
 </body>

@@ -37,3 +37,13 @@ if (loginForm) {
         }
     });
 }
+document.getElementById('togglePassword').addEventListener('click', function () {
+    const passwordField = document.getElementById('password');
+    // On bascule le type
+    const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordField.setAttribute('type', type);
+    
+    // On change l'icône (facultatif mais pro)
+    this.textContent = type === 'password' ? '👁️' : '🙈';
+});
+

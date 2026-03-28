@@ -14,8 +14,7 @@ body {
   padding: 0;
   background-color: var(--bg-color);
   color: var(--secondary-color);
-  display: flex;
-  flex-direction: column;
+  /* ⚠️ Supprime display:flex ici */
   min-height: 100vh;
 }
 
@@ -37,12 +36,13 @@ header h1 {
 
 /* --- Main Content --- */
 main {
-  flex: 1;
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding-bottom: 120px; /* espace pour ne pas cacher le contenu */
 }
+
 
 /* --- Cards (Sections) --- */
 section {
@@ -86,145 +86,63 @@ button:active {
   background-color: var(--secondary-color);
 }
 
-/* --- Navigation (Le menu du bas) --- */
-footer {
-  background-color: var(--white);
-  border-top: 1px solid #ddd;
-  position: sticky;
-  bottom: 0;
+/* --- LE MENU FIXE PARFAIT --- */
+footer.mobile-nav {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 85px !important; /* Hauteur identique accueil */
+    background-color: white !important;
+    border-top: 1px solid #eeeeee !important;
+    box-shadow: 0 -5px 25px rgba(0,0,0,0.1) !important;
+    z-index: 999999 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important; /* Centre le nav */
 }
 
-.nav-bar {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-around;
+footer.mobile-nav nav {
+    width: 100% !important;
 }
 
-.nav-bar li {
-  flex: 1;
+.nav-list {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-around !important; /* Équilibre parfait des icônes */
+    align-items: center !important;
+    width: 100% !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
-.nav-bar a {
-  display: block;
-  text-decoration: none;
-  color: #7f8c8d;
-  padding: 15px 0;
-  text-align: center;
-  font-size: 0.8rem;
-  transition: 0.3s;
+.nav-item {
+    flex: 1 !important; /* Force chaque bouton à prendre la même largeur */
+    text-align: center !important;
 }
 
-.nav-bar a.active {
-  color: var(--primary-color);
-  font-weight: bold;
-  border-top: 3px solid var(--primary-color);
+.nav-item a {
+    text-decoration: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 4px !important; /* Espace vertical entre icône et texte */
 }
 
-/* --- Utilitaires --- */
-.hidden {
-  display: none;
-}
-.logout-btn {
-  background-color: #e74c3c; /* Rouge alerte */
-  color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  width: 100%;
-  transition: background 0.3s;
+/* Tailles exactes Accueil */
+.nav-item a span:first-child { 
+    font-size: 26px !important; 
 }
 
-.logout-btn:hover {
-  background-color: #c0392b;
-}
-.text-logout-btn {
-  background: none;
-  border: none;
-  color: #e74c3c;
-  text-decoration: underline;
-  font-size: 0.8rem;
-  cursor: pointer;
-  padding: 5px;
-  width: auto; /* Pour ne pas qu'il prenne toute la largeur */
+.nav-item a span:last-child {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #7f8c8d;
 }
 
-.welcome-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
+/* Couleur active */
+.nav-item a.active span:last-child {
+    color: #27ae60 !important;
 }
-/* Notification NON LUE : Fond vert très clair et bordure verte */
-.notif-unread {
-    background-color: #f0fff4; /* Vert très clair */
-    border-left: 5px solid #27ae60; /* Ta couleur primary */
-}
-
-/* Notification LUE : Fond blanc/gris et texte discret */
-.notif-read {
-    background-color: #ffffff;
-    border-left: 5px solid #d1d5db; /* Gris clair */
-    opacity: 0.8;
-}
-
-.skeleton {
-  animation: pulse 1.5s infinite; /* C'est cette ligne qui fait le mouvement */
-  background-color: #e2e8f0;
-  height: 80px;
-  border-radius: 15px;
-  margin-bottom: 10px;
-}
-
-@keyframes pulse {
-  50% { opacity: 0.5; } /* La transparence change à moitié du temps */
-}
-@keyframes clignoter {
-    0% { background-color: #ff0000; opacity: 1; }
-    50% { background-color: #b30000; opacity: 0.7; }
-    100% { background-color: #ff0000; opacity: 1; }
-}
-
-.alerte-prioritaire {
-    border: 2px solid red !important;
-    animation: clignoter 1.5s infinite;
-    color: white !important;
-    font-weight: bold;
-}
-@keyframes slideIn {
-    from { transform: translateX(100%); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-/* Animation de pulsation pour l'urgence */
-@keyframes pulse-red {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(231, 76, 60, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
-}
-
-.status-icon {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.bg-info { background-color: #3498db; } /* Bleu */
-.bg-success { background-color: #2ecc71; } /* Vert */
-.bg-urgent { 
-  background-color: #e74c3c; 
-  animation: pulse-red 2s infinite; 
-} /* Rouge clignotant */
-
-
-
-
-
-
-
-
-

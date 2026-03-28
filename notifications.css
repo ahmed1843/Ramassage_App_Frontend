@@ -6,32 +6,6 @@ header {
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* --- Ajustement du Menu du bas (Fixé) --- */
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: white;
-  border-top: 1px solid #ddd;
-  padding: 0; /* On enlève le padding pour que les liens prennent toute la place */
-  z-index: 1000;
-}
-
-.nav-bar {
-  display: flex;
-  justify-content: space-around;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-bar a {
-  padding: 15px 10px;
-  display: block;
-  font-size: 0.8rem;
-  text-align: center;
-}
-
 /* --- Correction du Responsive --- */
 @media (max-width: 600px) {
   .nav-bar {

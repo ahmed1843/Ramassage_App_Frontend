@@ -4,11 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>S'enregistrer - New Déchets</title>
-  
-  <!-- Scripts de config en premier -->
   <script src="config.js"></script>
-  
-  <!-- Styles (On met le général puis le spécifique auth) -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="auth.css">
 </head>
@@ -17,40 +13,66 @@
     <h1>Créer un compte</h1>
   </header>
 
-  <main>
-    <form id="register-form" class="auth-form">
+  <main class="p-5">
+    <!-- 1. LE FORMULAIRE -->
+    <form id="register-form" class="auth-form" style="background: white; padding: 20px; border-radius: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+      
       <label for="prenom">Prénom :</label>
-      <input type="text" id="prenom" required>
+      <input type="text" id="prenom" required placeholder="Votre prénom">
+      <span id="error-prenom" style="color: #e74c3c; font-size: 11px; display: none; margin-top: -10px; margin-bottom: 10px;">⚠️ Le prénom ne doit contenir que des lettres.</span>
 
       <label for="nom">Nom :</label>
-      <input type="text" id="nom" required>
+      <input type="text" id="nom" required placeholder="Votre nom">
+      <span id="error-nom" style="color: #e74c3c; font-size: 11px; display: none; margin-top: -10px; margin-bottom: 10px;">⚠️ Le nom ne doit contenir que des lettres.</span>
 
       <label for="telephone">Numéro de téléphone :</label>
-      <input type="tel" id="telephone" required pattern="[0-9]{9,}" placeholder="Ex: 771234567">
+      <input type="tel" id="telephone" required pattern="[0-9]{9,}" placeholder=>
+      
       <label for="email">Email :</label>
       <input type="email" id="email" required placeholder="ex: momo@mail.com">
 
       <label for="password">Mot de passe :</label>
-      <input type="password" id="password" required minlength="6">
-
-
-      <!-- Zone d'affichage des erreurs (cachée par défaut) -->
-      <div id="error-message" class="error-box hidden">
-        ❌ Une erreur est survenue. Veuillez réessayer.
+      <div style="position: relative; width: 100%; margin-bottom: 20px;">
+          <input type="password" id="password" required minlength="8" placeholder="••••••••" 
+                 style="width: 100%; padding: 12px; padding-right: 45px; border-radius: 10px; border: 1px solid #eee; box-sizing: border-box;">
+          <span id="togglePassword" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 18px; user-select: none;">👁️</span>
       </div>
 
-      <!-- UN SEUL BOUTON ICI (j'ai supprimé le doublon) -->
-      <button type="submit" class="auth-btn">S'enregistrer</button>
+      <!-- Jauge de force -->
+      <div id="password-strength-container" style="margin-top: -15px; margin-bottom: 20px; display: none;">
+          <div style="display: flex; gap: 4px; height: 4px; margin-bottom: 5px;">
+              <div id="bar-1" style="flex: 1; background: #eee; border-radius: 10px; transition: 0.3s;"></div>
+              <div id="bar-2" style="flex: 1; background: #eee; border-radius: 10px; transition: 0.3s;"></div>
+              <div id="bar-3" style="flex: 1; background: #eee; border-radius: 10px; transition: 0.3s;"></div>
+          </div>
+          <span id="strength-text" style="font-size: 11px; font-weight: bold; color: #95a5a6;">Faible</span>
+      </div>
+
+      <div id="error-message" class="error-box hidden" style="color: red; font-size: 13px; margin-top: 10px;">
+        ❌ Une erreur est survenue.
+      </div>
+
+      <button type="submit" class="auth-btn" style="width: 100%; margin-top: 20px;">S'enregistrer</button>
     </form>
 
-    <div id="register-confirmation" class="hidden">
-      ✅ Enregistrement réussi ! Vous pouvez maintenant vous connecter.
+    <!-- 2. BLOC DE NAVIGATION (Identique à l'accueil) -->
+    <div style="background:white; padding:20px; border-radius:20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-top:20px; text-align:center; font-family: sans-serif;">
+        <p style="font-size:14px; color:#7f8c8d; margin-bottom:15px;">Vous avez déjà un compte ?</p>
+        <button onclick="window.location.href='login.html'" style="width:100%; background:#2ecc71; color:white; border:none; padding:14px; border-radius:15px; font-weight:bold; cursor:pointer; font-size:16px; box-shadow: 0 4px 12px rgba(46,204,113,0.3);">
+            Se connecter
+        </button>
+        <p style="margin-top:12px; font-size:13px; color:#95a5a6;">
+            Retourner à <a href="index.html" style="color:#2ecc71; font-weight:bold; text-decoration:none;">l'accueil</a>
+        </p>
+    </div>
+
+    <div id="register-confirmation" class="hidden" style="text-align: center; margin-top: 20px; color: #2ecc71; font-weight: bold;">
+      ✅ Enregistrement réussi !
     </div>
   </main>
 
-  <footer>
-    <p>Déjà inscrit ? <a href="login.html">Se connecter</a></p>
-    <p><a href="index.html">← Retour à l'accueil</a></p>
+  <footer style="margin-top: 40px; text-align: center; opacity: 0.5;">
+    <p>&copy; 2024 New Déchets</p>
   </footer>
 
   <script src="register.js"></script>

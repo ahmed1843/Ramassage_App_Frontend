@@ -58,17 +58,29 @@
     </div>
 </main>
 
+<footer class="mobile-nav">
+  <nav style="width: 100%;">
+    <ul class="nav-list">
+      <li class="nav-item"><a href="index.html"><span>🏠</span><span>Accueil</span></a></li>
+      <li class="nav-item"><a href="notifications.html" class="active"><span>🔔</span><span>Notifs</span></a></li>
+      <li class="nav-item"><a href="signalement.html"><span>📢</span><span>Signaler</span></a></li>
+      <li class="nav-item"><a href="contact.html"><span>❓</span><span>Aide</span></a></li>
+      <li class="nav-item"><a href="profil.html"><span>👤</span><span>Profil</span></a></li>
+    </ul>
+  </nav>
+</footer>
 
-  <footer>
-    <nav>
-      <ul class="nav-bar">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="notifications.html" class="active">Notifications</a></li>
-        <li><a href="signalement.html">Signalement</a></li>
-        <li><a href="profil.html">Profil</a></li>
-      </ul>
-    </nav>
-  </footer>
+
+
+<style>
+    /* On s'assure que le contenu ne passe pas sous le menu */
+    main { padding-bottom: 110px !important; }
+    
+    /* On force l'affichage en ligne du menu si jamais un autre CSS l'empêche */
+    .nav-list { display: flex !important; flex-direction: row !important; }
+</style>
+
+
 
   <script src="notifications.js"></script>
 </body>
